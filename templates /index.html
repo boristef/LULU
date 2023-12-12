@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深度學習模型部署</title>
+</head>
+
+<body>
+    <h1>輸入要進行分類的文本：</h1>
+    <form method="post">
+        <input type="text" name="user_input" required>
+        <input type="submit" value="預測">
+    </form>
+    {% if user_input %}
+    <p>輸入文本：{{ user_input }}</p>
+    <p>預測類別：{{ predicted_class }}</p>
+    {% endif %}
+</body>
+
+</html>
