@@ -45,17 +45,17 @@ def index():
 @app.route("/predict", methods=["POST"])
 def predict():
     user_input = request.form["text"]
-    print(user_input)
+    # print(user_input)
     user_input = "".join(
         [convert_to_chinese(ch) if ch.isdigit() else ch for ch in str(user_input)]
     )
     # 進行文本分詞並轉換成序列
     user_input_segmented = chinese_text_segmentation(user_input)
-    print(user_input_segmented)
+    # print(user_input_segmented)
     user_input_seq = tokenizer.texts_to_sequences([user_input_segmented])
-    print(user_input_seq)
+    # print(user_input_seq)
     user_input_pad = pad_sequences(user_input_seq, maxlen=10)
-    print(user_input_pad)
+    # print(user_input_pad)
 
     # 預測結果
     predictions = model.predict(user_input_pad)
@@ -67,4 +67,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
