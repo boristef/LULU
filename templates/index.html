@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Learning Model Deployment</title>
+</head>
+<body>
+    <h1>中文文本分類</h1>
+    <form method="post" action="/predict">
+        <label for="text">輸入文本：</label>
+        <input type="text" name="text" required>
+        <button type="submit">預測</button>
+    </form>
+
+    <div id="result">
+        <h2>預測結果：</h2>
+        <p>類別: <span id="predictedClass"></span></p>
+        <p>概率: <span id="probabilities"></span></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(form);
+                fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('predictedClass').innerText = data.class;
+                    document.getElementById('probabilities').innerText = JSON.stringify(data.probabilities);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
