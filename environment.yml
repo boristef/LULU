@@ -3,8 +3,10 @@ channels:
   - defaults
 dependencies:
   - python=3.9.13 # or the version you are using
-  - jieba
-  - keras
-  - tensorflow
+  - jieba=0.42.1
+  - Keras=2.14.0
+  - tensorflow=2.14.1
   - numpy
   - scikit-learn
+  - Flask==3.0.0
+  - gunicorn==20.1.0
