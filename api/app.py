@@ -42,7 +42,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/predict", methods=["POST"])
+@app.route("/api/predict", methods=["POST"])
 def predict():
     user_input = request.form["text"]
     # print(user_input)
