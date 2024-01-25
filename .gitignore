@@ -12,3 +12,5 @@
 .vercel
 /models/
 /ernie-autosave/
+train_data.xlsx
+output.csv
