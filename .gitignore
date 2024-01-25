@@ -10,3 +10,7 @@
 /word2vec.ipynb
 /word2vec_model.txt
 .vercel
+/models/
+/ernie-autosave/
+train_data.xlsx
+output.csv
