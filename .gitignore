@@ -10,5 +10,10 @@
 /word2vec.ipynb
 /word2vec_model.txt
 .vercel
+<<<<<<< HEAD
 /mdoels/
 /ernie-autosave/
+=======
+/mdoels
+/ernie-autosave
+>>>>>>> 74a8daad6ef36af7cb934cd78b16f10a5b16716d
